@@ -28,4 +28,7 @@ services:
   debug:
     image: appropriate/nc
     command: nc -l 80
-
+  elasticsearch:
+    image: elasticsearch
+    ports:
+      - '9200:9200'
