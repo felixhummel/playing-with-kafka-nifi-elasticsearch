@@ -13,3 +13,19 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  nifi:
+    image: mkobit/nifi
+    ports:
+      - 8080:8080
+      - 8081:8081
+  # debugging nifi out
+  # use this as follows
+  # - add processsor "PutTCP"
+  #   - Hostname: debug
+  #   - Port: 80
+  # - connect something that produces text to it
+  # - check the logs of it: docker-compose logs -f debug
+  debug:
+    image: appropriate/nc
+    command: nc -l 80
+
