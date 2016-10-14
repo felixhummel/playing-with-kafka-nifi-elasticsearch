@@ -7,6 +7,7 @@ https://github.com/dpkp/kafka-python
 import json
 import datetime
 import pytz
+import uuid
 import time
 
 from kafka import KafkaProducer
@@ -26,7 +27,7 @@ def while_true(sleep_s=0.5, actions=None):
     while True:
         for action in actions:
             dt = datetime.datetime.now(pytz.timezone('Europe/Berlin')).isoformat()
-            payload = {'action': action, 'date': dt}
+            payload = {'action': action, 'date': dt, 'id': str(uuid.uuid4())}
             print(payload)
             send(payload)
         producer.flush()
