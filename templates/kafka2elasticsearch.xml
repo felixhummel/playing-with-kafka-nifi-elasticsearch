@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <template encoding-version="1.0">
   <description></description>
-  <groupId>c4fee2d1-0157-1000-bd3a-b14d61f8dc7c</groupId>
+  <groupId>e203534b-0157-1000-4ebf-d99709df8080</groupId>
   <name>kafka2elasticsearch</name>
   <snippet>
     <connections>
@@ -114,21 +114,9 @@
         <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
         <descriptors>
           <entry>
-            <key>bootstrap.servers</key>
-            <value>
-              <name>bootstrap.servers</name>
-            </value>
-          </entry>
-          <entry>
             <key>security.protocol</key>
             <value>
               <name>security.protocol</name>
-            </value>
-          </entry>
-          <entry>
-            <key>sasl.kerberos.service.name</key>
-            <value>
-              <name>sasl.kerberos.service.name</name>
             </value>
           </entry>
           <entry>
@@ -139,9 +127,9 @@
             </value>
           </entry>
           <entry>
-            <key>topic</key>
+            <key>max.poll.records</key>
             <value>
-              <name>topic</name>
+              <name>max.poll.records</name>
             </value>
           </entry>
           <entry>
@@ -151,15 +139,15 @@
             </value>
           </entry>
           <entry>
-            <key>auto.offset.reset</key>
+            <key>bootstrap.servers</key>
             <value>
-              <name>auto.offset.reset</name>
+              <name>bootstrap.servers</name>
             </value>
           </entry>
           <entry>
-            <key>key-attribute-encoding</key>
+            <key>topic</key>
             <value>
-              <name>key-attribute-encoding</name>
+              <name>topic</name>
             </value>
           </entry>
           <entry>
@@ -169,9 +157,21 @@
             </value>
           </entry>
           <entry>
-            <key>max.poll.records</key>
+            <key>key-attribute-encoding</key>
             <value>
-              <name>max.poll.records</name>
+              <name>key-attribute-encoding</name>
+            </value>
+          </entry>
+          <entry>
+            <key>auto.offset.reset</key>
+            <value>
+              <name>auto.offset.reset</name>
+            </value>
+          </entry>
+          <entry>
+            <key>sasl.kerberos.service.name</key>
+            <value>
+              <name>sasl.kerberos.service.name</name>
             </value>
           </entry>
         </descriptors>
@@ -179,41 +179,41 @@
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
           <entry>
-            <key>bootstrap.servers</key>
-            <value>kafka:9092</value>
-          </entry>
-          <entry>
             <key>security.protocol</key>
             <value>PLAINTEXT</value>
-          </entry>
-          <entry>
-            <key>sasl.kerberos.service.name</key>
           </entry>
           <entry>
             <key>ssl.context.service</key>
           </entry>
           <entry>
-            <key>topic</key>
-            <value>foo</value>
+            <key>max.poll.records</key>
+            <value>10000</value>
           </entry>
           <entry>
             <key>group.id</key>
             <value>grp0</value>
           </entry>
           <entry>
-            <key>auto.offset.reset</key>
-            <value>none</value>
+            <key>bootstrap.servers</key>
+            <value>kafka:9092</value>
+          </entry>
+          <entry>
+            <key>topic</key>
+            <value>foo</value>
+          </entry>
+          <entry>
+            <key>message-demarcator</key>
           </entry>
           <entry>
             <key>key-attribute-encoding</key>
             <value>utf-8</value>
           </entry>
           <entry>
-            <key>message-demarcator</key>
+            <key>auto.offset.reset</key>
+            <value>none</value>
           </entry>
           <entry>
-            <key>max.poll.records</key>
-            <value>10000</value>
+            <key>sasl.kerberos.service.name</key>
           </entry>
         </properties>
         <runDurationMillis>0</runDurationMillis>
@@ -242,33 +242,9 @@
         <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
         <descriptors>
           <entry>
-            <key>Hostname</key>
-            <value>
-              <name>Hostname</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Port</key>
-            <value>
-              <name>Port</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Max Size of Socket Send Buffer</key>
-            <value>
-              <name>Max Size of Socket Send Buffer</name>
-            </value>
-          </entry>
-          <entry>
             <key>Idle Connection Expiration</key>
             <value>
               <name>Idle Connection Expiration</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Connection Per FlowFile</key>
-            <value>
-              <name>Connection Per FlowFile</name>
             </value>
           </entry>
           <entry>
@@ -278,9 +254,9 @@
             </value>
           </entry>
           <entry>
-            <key>Timeout</key>
+            <key>Max Size of Socket Send Buffer</key>
             <value>
-              <name>Timeout</name>
+              <name>Max Size of Socket Send Buffer</name>
             </value>
           </entry>
           <entry>
@@ -288,6 +264,30 @@
             <value>
               <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
               <name>SSL Context Service</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Timeout</key>
+            <value>
+              <name>Timeout</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Port</key>
+            <value>
+              <name>Port</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Hostname</key>
+            <value>
+              <name>Hostname</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Connection Per FlowFile</key>
+            <value>
+              <name>Connection Per FlowFile</name>
             </value>
           </entry>
           <entry>
@@ -301,35 +301,35 @@
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
           <entry>
-            <key>Hostname</key>
-            <value>debug</value>
-          </entry>
-          <entry>
-            <key>Port</key>
-            <value>80</value>
-          </entry>
-          <entry>
-            <key>Max Size of Socket Send Buffer</key>
-            <value>200 KB</value>
-          </entry>
-          <entry>
             <key>Idle Connection Expiration</key>
             <value>5 seconds</value>
-          </entry>
-          <entry>
-            <key>Connection Per FlowFile</key>
-            <value>false</value>
           </entry>
           <entry>
             <key>Outgoing Message Delimiter</key>
             <value>\n</value>
           </entry>
           <entry>
+            <key>Max Size of Socket Send Buffer</key>
+            <value>200 KB</value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+          </entry>
+          <entry>
             <key>Timeout</key>
             <value>10 seconds</value>
           </entry>
           <entry>
-            <key>SSL Context Service</key>
+            <key>Port</key>
+            <value>80</value>
+          </entry>
+          <entry>
+            <key>Hostname</key>
+            <value>debug</value>
+          </entry>
+          <entry>
+            <key>Connection Per FlowFile</key>
+            <value>false</value>
           </entry>
           <entry>
             <key>Character Set</key>
@@ -366,15 +366,51 @@
         <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
         <descriptors>
           <entry>
+            <key>ElasticSearch Hosts</key>
+            <value>
+              <name>ElasticSearch Hosts</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Sampler Interval</key>
+            <value>
+              <name>Sampler Interval</name>
+            </value>
+          </entry>
+          <entry>
             <key>Cluster Name</key>
             <value>
               <name>Cluster Name</name>
             </value>
           </entry>
           <entry>
-            <key>ElasticSearch Hosts</key>
+            <key>Index Operation</key>
             <value>
-              <name>ElasticSearch Hosts</name>
+              <name>Index Operation</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Index</key>
+            <value>
+              <name>Index</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Shield Plugin Filename</key>
+            <value>
+              <name>Shield Plugin Filename</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Identifier Attribute</key>
+            <value>
+              <name>Identifier Attribute</name>
+            </value>
+          </entry>
+          <entry>
+            <key>ElasticSearch Ping Timeout</key>
+            <value>
+              <name>ElasticSearch Ping Timeout</name>
             </value>
           </entry>
           <entry>
@@ -385,9 +421,9 @@
             </value>
           </entry>
           <entry>
-            <key>Shield Plugin Filename</key>
+            <key>Type</key>
             <value>
-              <name>Shield Plugin Filename</name>
+              <name>Type</name>
             </value>
           </entry>
           <entry>
@@ -397,39 +433,9 @@
             </value>
           </entry>
           <entry>
-            <key>Password</key>
+            <key>Batch Size</key>
             <value>
-              <name>Password</name>
-            </value>
-          </entry>
-          <entry>
-            <key>ElasticSearch Ping Timeout</key>
-            <value>
-              <name>ElasticSearch Ping Timeout</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Sampler Interval</key>
-            <value>
-              <name>Sampler Interval</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Identifier Attribute</key>
-            <value>
-              <name>Identifier Attribute</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Index</key>
-            <value>
-              <name>Index</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Type</key>
-            <value>
-              <name>Type</name>
+              <name>Batch Size</name>
             </value>
           </entry>
           <entry>
@@ -439,15 +445,9 @@
             </value>
           </entry>
           <entry>
-            <key>Batch Size</key>
+            <key>Password</key>
             <value>
-              <name>Batch Size</name>
-            </value>
-          </entry>
-          <entry>
-            <key>Index Operation</key>
-            <value>
-              <name>Index Operation</name>
+              <name>Password</name>
             </value>
           </entry>
         </descriptors>
@@ -455,56 +455,56 @@
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
           <entry>
-            <key>Cluster Name</key>
-            <value>elasticsearch</value>
-          </entry>
-          <entry>
             <key>ElasticSearch Hosts</key>
             <value>elasticsearch:9200</value>
-          </entry>
-          <entry>
-            <key>SSL Context Service</key>
-          </entry>
-          <entry>
-            <key>Shield Plugin Filename</key>
-          </entry>
-          <entry>
-            <key>Username</key>
-          </entry>
-          <entry>
-            <key>Password</key>
-          </entry>
-          <entry>
-            <key>ElasticSearch Ping Timeout</key>
-            <value>5s</value>
           </entry>
           <entry>
             <key>Sampler Interval</key>
             <value>5s</value>
           </entry>
           <entry>
-            <key>Identifier Attribute</key>
-            <value>uuid</value>
+            <key>Cluster Name</key>
+            <value>elasticsearch</value>
+          </entry>
+          <entry>
+            <key>Index Operation</key>
+            <value>index</value>
           </entry>
           <entry>
             <key>Index</key>
             <value>foo</value>
           </entry>
           <entry>
+            <key>Shield Plugin Filename</key>
+          </entry>
+          <entry>
+            <key>Identifier Attribute</key>
+            <value>uuid</value>
+          </entry>
+          <entry>
+            <key>ElasticSearch Ping Timeout</key>
+            <value>5s</value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+          </entry>
+          <entry>
             <key>Type</key>
             <value>foo</value>
           </entry>
           <entry>
-            <key>Character Set</key>
-            <value>UTF-8</value>
+            <key>Username</key>
           </entry>
           <entry>
             <key>Batch Size</key>
             <value>30</value>
           </entry>
           <entry>
-            <key>Index Operation</key>
-            <value>index</value>
+            <key>Character Set</key>
+            <value>UTF-8</value>
+          </entry>
+          <entry>
+            <key>Password</key>
           </entry>
         </properties>
         <runDurationMillis>0</runDurationMillis>
@@ -553,12 +553,6 @@
             </value>
           </entry>
           <entry>
-            <key>Path Not Found Behavior</key>
-            <value>
-              <name>Path Not Found Behavior</name>
-            </value>
-          </entry>
-          <entry>
             <key>Null Value Representation</key>
             <value>
               <name>Null Value Representation</name>
@@ -568,6 +562,12 @@
             <key>uuid</key>
             <value>
               <name>uuid</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Path Not Found Behavior</key>
+            <value>
+              <name>Path Not Found Behavior</name>
             </value>
           </entry>
         </descriptors>
@@ -583,16 +583,16 @@
             <value>auto-detect</value>
           </entry>
           <entry>
-            <key>Path Not Found Behavior</key>
-            <value>warn</value>
-          </entry>
-          <entry>
             <key>Null Value Representation</key>
             <value>empty string</value>
           </entry>
           <entry>
             <key>uuid</key>
             <value>$.id</value>
+          </entry>
+          <entry>
+            <key>Path Not Found Behavior</key>
+            <value>warn</value>
           </entry>
         </properties>
         <runDurationMillis>0</runDurationMillis>
@@ -617,5 +617,5 @@
       <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
     </processors>
   </snippet>
-  <timestamp>10/14/2016 22:04:50 UTC</timestamp>
+  <timestamp>10/20/2016 12:15:02 UTC</timestamp>
 </template>
