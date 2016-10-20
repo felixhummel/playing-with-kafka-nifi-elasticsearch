@@ -1,1 +1,21 @@
-{"foo":{"mappings":{"foo":{"properties":{"action":{"type":"string"},"date":{"type":"date","format":"strict_date_optional_time||epoch_millis"},"group":{"type":"long"},"id":{"type":"string"}}}}}}
+{
+  "mappings": {
+    "foo": {
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "date": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        },
+        "group": {
+          "type": "long"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
