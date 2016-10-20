@@ -47,3 +47,35 @@ Pictures!
 Notes
 =====
 - ``./consume.py`` may take a while to initialize (TODO: find out why)
+
+DB Notes
+========
+::
+
+    dc exec nifi java -version
+    openjdk version "1.8.0_102"
+
+PG JDBC: https://jdbc.postgresql.org/download.html
+
+- JRE 1.6 --> JDBC4
+- JRE 1.7 --> JDBC41
+- JRE 1.8 --> JDBC42
+
+Classname: ``org.postgresql.Driver`` (https://jdbc.postgresql.org/documentation/84/load.html)
+
+Connect-URL: ``jdbc:postgresql://postgres/foo`` (``jdbc:postgresql://host/database`` https://jdbc.postgresql.org/documentation/84/connect.html)
+
+DBCPConnectionPool in Process Group Configuration
+-------------------------------------------------
+TODO: add /opt/nifi/lib/postgresql-9.4.1211.jar to nifi container (volume is
+enough)
+
+When you create a QueryDatabaseTable processor, it will prompt to create a
+"Database Connection Pooling Service" for the Process Group. Here's the data
+it needs:
+
+- Database Connection URL: jdbc:postgresql://postgres/foo
+- Database Driver Class Name: org.postgresql.Driver
+- Database Driver Location(s): /opt/nifi/lib/postgresql-9.4.1211.jar
+- Database User: foo
+- Password: foo
