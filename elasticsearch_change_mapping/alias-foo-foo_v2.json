@@ -1,0 +1,6 @@
+{
+  "actions":
+  [
+    { "add": { "alias": "foo", "index": "foo_v2" } }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "source": {
+    "index": "foo"
+  },
+  "dest": {
+    "index": "foo_v2"
+  }
+}
