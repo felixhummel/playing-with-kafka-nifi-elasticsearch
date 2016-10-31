@@ -1,5 +1,5 @@
 go:
-	docker-compose up -d
+	HOSTNAME=$(shell hostname -f) docker-compose up -d
 	./wait_for_nifi.sh
 
 produce:
