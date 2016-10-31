@@ -18,6 +18,8 @@ services:
     ports:
       - 8080:8080
       - 8081:8081
+    volumes:
+      - ./scripts:/scripts
   # debugging nifi out
   # use this as follows
   # - add processsor "PutTCP"
